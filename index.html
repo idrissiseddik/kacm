@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KACM - Site en construction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --kacm-red: #d62828;
+            --kacm-dark: #003049;
+            --kacm-gold: #f77f00;
+            --kacm-light: #f8f9fa;
+        }
+        
+        body {
+            margin: 0;
+            padding: 70px 0 50px;
+            min-height: 100vh;
+            background-color: white;
+            font-family: 'Arial', sans-serif, system-ui;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow-x: hidden;
+            background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+            background-attachment: fixed;
+        }
+        
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(135deg, var(--kacm-dark), var(--kacm-red));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+        
+        .header-content {
+            text-align: center;
+            line-height: 1.2;
+            padding: 0 15px;
+        }
+        
+        .header-title {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: bold;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .header-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            white-space: nowrap;
+            font-style: italic;
+        }
+        
+        .fixed-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(135deg, var(--kacm-red), var(--kacm-dark));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+        }
+        
+        .welcome-container {
+            max-width: 800px;
+            margin: 5px auto 15px;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+        
+        .welcome-message {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: var(--kacm-dark);
+            font-weight: bold;
+            line-height: 1.4;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.7);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            animation: marquee 25s linear infinite;
+            white-space: nowrap;
+            display: inline-block;
+            padding-left: 100%;
+            padding-right: 100%;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .logo-container {
+            width: min(80vw, 400px);
+            height: min(50vh, 300px);
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+        
+        .logo-container img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.25));
+        }
+        
+        .construction-text {
+            margin: 15px 0;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-weight: bold;
+            color: var(--kacm-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .social-icons {
+            margin: 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: var(--kacm-red);
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.1) translateY(-3px);
+            color: var(--kacm-dark);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        
+        .sponsors-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px 0;
+            overflow: hidden;
+            position: relative;
+            min-height: 100px;
+        }
+        
+        .sponsor-item {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            font-weight: bold;
+            color: var(--kacm-dark);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            padding: 10px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .sponsor-item.active {
+            opacity: 1;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .custom-toast {
+            position: fixed;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--kacm-red), var(--kacm-dark));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            z-index: 1100;
+            display: none;
+            text-align: center;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: fadeIn 0.3s;
+            max-width: 90%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateX(-50%) translateY(0); }
+            to { opacity: 0; transform: translateX(-50%) translateY(20px); }
+        }
+
+        .coming-soon {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: var(--kacm-dark);
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        /* Styles pour la modale améliorée */
+        .kacm-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            padding: 25px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 5px solid var(--kacm-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes modalFadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(-50px) scale(0.95);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            color: var(--kacm-dark);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .modal-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--kacm-red), var(--kacm-gold));
+            border-radius: 3px;
+        }
+
+        .match-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .match-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .match-item:hover {
+            transform: translateX(5px);
+            border-left: 3px solid var(--kacm-red);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .match-icon {
+            color: white;
+            font-size: 1rem;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--kacm-red), var(--kacm-gold));
+            flex-shrink: 0;
+            box-shadow: 0 3px 6px rgba(214, 40, 40, 0.3);
+        }
+
+        .match-details {
+            flex-grow: 1;
+        }
+
+        .match-teams {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--kacm-dark);
+            text-align: center;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .vs-text {
+            color: var(--kacm-red);
+            font-weight: bold;
+            margin: 0 8px;
+        }
+
+        .match-competition {
+            font-weight: bold;
+            text-align: center;
+            color: var(--kacm-red);
+            margin-top: 5px;
+        }
+
+        .match-location, .match-time {
+            font-size: 0.9rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .modal-sponsors {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .modal-sponsors-title {
+            width: 100%;
+            text-align: center;
+            color: var(--kacm-dark);
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .modal-sponsor-item {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--kacm-dark);
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            margin-bottom: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .modal-sponsor-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-sponsor-item::before {
+            content: "★";
+            color: var(--kacm-gold);
+            font-size: 0.8rem;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--kacm-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(214, 40, 40, 0.1);
+        }
+
+        .close-modal:hover {
+            color: var(--kacm-red);
+            transform: rotate(90deg) scale(1.1);
+            background: rgba(214, 40, 40, 0.2);
+        }
+
+        /* Responsive pour petits écrans */
+        @media (max-width: 576px) {
+            .modal-content {
+                padding: 20px 15px;
+                width: 95%;
+            }
+            
+            .modal-header {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            .match-item {
+                font-size: 0.9rem;
+                padding: 8px 10px;
+                gap: 8px;
+            }
+            
+            .match-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+            
+            .match-teams {
+                font-size: 1rem;
+            }
+            
+            .vs-text {
+                margin: 0 5px;
+            }
+            
+            .match-location, .match-time {
+                font-size: 0.85rem;
+                justify-content: center;
+            }
+            
+            .modal-sponsors-title {
+                font-size: 1rem;
+            }
+            
+            .modal-sponsor-item {
+                font-size: 0.85rem;
+                padding: 6px;
+            }
+            
+            .close-modal {
+                top: 5px;
+                right: 10px;
+                font-size: 1.3rem;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Fixe -->
+    <header class="fixed-header">
+        <div class="header-content">
+            <div class="header-title">KACM</div>
+            <div class="header-subtitle">Kawkab Athlétic Club de Marrakech</div>
+        </div>
+    </header>
+
+    <!-- Contenu Principal -->
+    <main>
+        <!-- Message de bienvenue -->
+        <div class="welcome-container">
+            <div class="welcome-message">
+                Bienvenue sur le site non officiel de Kawkab Athlétic Club de Marrakech (K.A.C.M)!
+            </div>
+        </div>
+        
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="images/kacm.png" alt="Logo KACM" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'logo-fallback\' style=\'font-size:3rem;font-weight:bold;color:var(--kacm-red)\'>KACM</div>'">
+        </div>
+        
+        <!-- Message construction -->
+        <div class="construction-text">
+            <i class="fas fa-tools"></i> Site en construction <i class="fas fa-hammer"></i>
+        </div>
+        
+        <p class="coming-soon">Notre nouveau site arrive bientôt !</p>
+        
+        <!-- Sponsors animés -->
+        <div class="sponsors-container">
+            <div class="sponsor-item" data-index="0">ICI Sponsor Officiel</div>
+            <div class="sponsor-item" data-index="1">ICI Partenaire Principal</div>
+            <div class="sponsor-item" data-index="2">ICI Fournisseur Officiel</div>
+            <div class="sponsor-item" data-index="3">ICI Sponsor Technique</div>
+            <div class="sponsor-item" data-index="4">ICI Partenaire Premium</div>
+        </div>
+        
+        <!-- Icônes réseaux sociaux -->
+        <div class="social-icons">
+            <a onclick="showToast()" aria-label="Facebook (lien non disponible)"><i class="fab fa-facebook-f"></i></a>
+            <a onclick="showToast()" aria-label="Twitter (lien non disponible)"><i class="fab fa-twitter"></i></a>
+            <a onclick="showToast()" aria-label="Instagram (lien non disponible)"><i class="fab fa-instagram"></i></a>
+            <a onclick="showToast()" aria-label="YouTube (lien non disponible)"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <!-- Toast message -->
+        <div id="customToast" class="custom-toast">
+            <i class="fas fa-info-circle"></i> En Construction...<br>
+            Retrouvez-nous bientôt en ligne !<br>
+            <small>© 2026 KACM - Powered By M.Seddik Elidrissi</small>
+        </div>
+    </main>
+
+    <!-- Footer Fixe -->
+    <footer class="fixed-footer">
+        <p id="footer-text">© 2026 Kawkab Athlétic Club de Marrakech - Par : M.Seddik Elidrissi</p>
+    </footer>
+
+    <!-- Modale du prochain match - Version optimisée -->
+    <div id="matchModal" class="kacm-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                PROCHAIN MATCH OFFICIEL
+            </div>
+            <div class="match-info">
+                <div class="match-item">
+                    <div class="match-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="match-details">
+                        <div class="match-teams">
+                            <span>KACM</span>
+                            <span class="vs-text">VS</span>
+                            <span>WAC</span>
+                        </div>
+                        <div class="match-competition">
+                            BOTOLA PRO D1 - JOURNÉE 01
+                        </div>
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="match-details">
+                        <div class="match-location">
+                            <i class="fas fa-stadium" style="color: var(--kacm-red);"></i>
+                            STADE MOHAMMED V, CASABLANCA
+                        </div>
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="match-details">
+                        <div class="match-time">
+                            <i class="fas fa-calendar-day" style="color: var(--kacm-red);"></i>
+                            DIMANCHE .. AOUT 2025
+                        </div>
+                        <div class="match-time">
+                            <i class="fas fa-stopwatch" style="color: var(--kacm-red);"></i>
+                            15h00 (HEURE LOCALE)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-sponsors">
+                <div class="modal-sponsors-title">LES SPONSORS OFFICIELS DU K.A.C.M</div>
+                <div class="modal-sponsor-item">SPONSOR 1</div>
+                <div class="modal-sponsor-item">SPONSOR 2</div>
+                <div class="modal-sponsor-item">SPONSOR 3</div>
+                <div class="modal-sponsor-item">SPONSOR 4</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showToast() {
+            const toast = document.getElementById('customToast');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.animation = 'fadeOut 0.3s';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                    toast.style.animation = 'fadeIn 0.3s';
+                }, 300);
+            }, 3000);
+        }
+
+        function animateSponsors() {
+            const sponsors = document.querySelectorAll('.sponsor-item');
+            let currentIndex = 0;
+            
+            if (sponsors.length > 0) {
+                sponsors[0].classList.add('active');
+            }
+            
+            setInterval(() => {
+                sponsors[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % sponsors.length;
+                sponsors[currentIndex].classList.add('active');
+            }, 3000);
+        }
+
+        function checkScreenSize() {
+            const welcomeMessage = document.querySelector('.welcome-message');
+            const footer = document.getElementById('footer-text');
+            
+            if (window.innerWidth < 400) {
+                welcomeMessage.innerHTML = "Bienvenue sur le site non officiel de Kawkab Athlétic Club de Marrakech (K.A.C.M)!";
+                footer.textContent = "© 2026 KACM - Par : M.Seddik Elidrissi";
+            } else {
+                welcomeMessage.innerHTML = "Bienvenue sur le site non officiel de Kawkab Athlétic Club de Marrakech (K.A.C.M)!";
+                footer.textContent = "© 2026 KACM - Par : M.Seddik Elidrissi";
+            }
+        }
+
+        function showModal() {
+            const modal = document.getElementById('matchModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('matchModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            animateSponsors();
+            checkScreenSize();
+            window.addEventListener('resize', checkScreenSize);
+            
+            // Afficher la modale après 5 secondes
+            setTimeout(showModal, 5000);
+            
+            // Fermer la modale si on clique en dehors du contenu
+            const modal = document.getElementById('matchModal');
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
