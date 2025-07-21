@@ -69,7 +69,22 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis;
+            position: relative;
+        }
+        
+        .welcome-message span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: defilement 15s linear infinite;
+        }
+        
+        @keyframes defilement {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
         
         .logo-container {
@@ -170,6 +185,21 @@
             text-align: center;
         }
         
+        .match-teams {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .match-teams span {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        
+        .vs-text {
+            color: var(--kacm-red);
+            font-weight: bold;
+        }
+        
         @media (max-width: 768px) {
             .logo-container {
                 width: 350px;
@@ -195,6 +225,10 @@
                 height: 40px;
                 font-size: 1.3rem;
             }
+            
+            .match-teams {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -212,8 +246,8 @@
         <!-- Message de bienvenue -->
         <div class="row mb-3">
             <div class="col-12">
-                <div class="welcome-message text-center">
-                    Bienvenue sur le site non officiel de Kawkab Athlétic Club de Marrakech (K.A.C.M)!
+                <div class="welcome-message">
+                    <span>Bienvenue sur le site non officiel de Kawkab Athlétic Club de Marrakech (K.A.C.M)!</span>
                 </div>
             </div>
         </div>
@@ -242,20 +276,20 @@
             <div class="col-12">
                 <div class="sponsors-container">
                     <div class="sponsor-title">
-                        <i class="fas fa-star"></i> NOS SPONSORS OFFICIELS <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> NOS SPONSORS <i class="fas fa-star"></i>
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-6 sponsor-item">
-                            <i class="fas fa-plane"></i> Royal Air Maroc
+                            Ici sponsor premium
                         </div>
                         <div class="col-md-3 col-6 sponsor-item">
-                            <i class="fas fa-phone-alt"></i> Maroc Telecom
+                            Ici sponsor officiel
                         </div>
                         <div class="col-md-3 col-6 sponsor-item">
-                            <i class="fas fa-tshirt"></i> Adidas
+                            Ici sponsor...
                         </div>
                         <div class="col-md-3 col-6 sponsor-item">
-                            <i class="fas fa-wine-bottle"></i> Coca-Cola
+                            Ici sponsor...
                         </div>
                     </div>
                 </div>
@@ -298,7 +332,7 @@
     <!-- Footer Fixe -->
     <footer class="fixed-footer d-flex align-items-center">
         <div class="container text-center">
-            <p class="mb-0" id="footer-text">© 2026 Kawkab Athlétic Club de Marrakech - Tous droits réservés</p>
+            <p class="mb-0" id="footer-text">© 2026 Kawkab Athlétic Club de Marrakech - Tous droits réservés | Powered by: M.Seddik Elidrissi</p>
         </div>
     </footer>
 
@@ -324,7 +358,7 @@
                                     <span>WAC</span>
                                 </div>
                                 <div class="match-competition">
-                                    <i class="fas fa-flag me-1"></i> BOTOLA PRO D1 - JOURNÉE 12
+                                    <i class="fas fa-flag me-1"></i> BOTOLA PRO D1 - JOURNÉE 01
                                 </div>
                             </div>
                         </div>
@@ -348,7 +382,7 @@
                             </div>
                             <div class="match-details">
                                 <div class="match-time mb-2">
-                                    <i class="fas fa-calendar-day me-1"></i> DIMANCHE 15 OCTOBRE 2023
+                                    <i class="fas fa-calendar-day me-1"></i> DIMANCHE .. AOUT 2025
                                 </div>
                                 <div class="match-time">
                                     <i class="fas fa-stopwatch me-1"></i> 15h00 (HEURE LOCALE)
@@ -384,6 +418,9 @@
                 toast.style.display = 'none';
             }, 3000);
         }
+        
+        // Date dynamique dans le footer
+        document.getElementById('footer-text').textContent = `© ${new Date().getFullYear()} Kawkab Athlétic Club de Marrakech - Tous droits réservés | Powered by: M.Seddik Elidrissi`;
     </script>
 </body>
 </html>
