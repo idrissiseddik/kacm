@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualité - KACM</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            padding-top: 100px;
+            padding-bottom: 60px;
+            background-color: #f8f9fa;
+        }
+        
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            background: linear-gradient(to right, #d62828, #aa0000);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .fixed-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            background: linear-gradient(to right, #d62828, #aa0000);
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .club-name {
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+        
+        .article-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-top: 5px solid #d62828;
+        }
+        
+        .article-title {
+            color: #d62828;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .article-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-content {
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        .back-button {
+            background-color: #d62828;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .back-button:hover {
+            background-color: #b51d1d;
+            color: white;
+        }
+        
+        .article-meta {
+            color: #6c757d;
+            font-style: italic;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .club-name {
+                font-size: 1.2rem;
+            }
+            
+            body {
+                padding-top: 90px;
+            }
+            
+            .article-container {
+                padding: 20px;
+            }
+            
+            .article-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Fixe -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="row py-2">
+                <div class="col text-center">
+                    <h1 class="club-name text-white mb-0">KACM<br>Kawkab Athlètic Club de Marrakech<br>1947 - 2025</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu Principal -->
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <!-- Article -->
+                <div class="article-container">
+                    <h2 class="article-title">WAC – KACM : un choc prometteur à l’affiche de la Botola Pro</h2>
+                    
+                    <div class="article-meta">
+                        <i class="far fa-calendar-alt me-1"></i> 11 Septembre 2025 | 
+                        <i class="far fa-user me-1 ms-2"></i> Par M. Seddik Elidrissi
+                    </div>
+                    
+                    <img src="images/actua02.jpg" alt="Avant-match WAC KACM" class="article-image">
+                    
+                    <div class="article-content">
+                        <p>Le <strong>Wydad de Casablanca</strong> s’apprête à recevoir le <strong>Kawkab de Marrakech</strong> dans un duel qui promet beaucoup d’intensité en Botola Pro. D’un côté, le WAC veut confirmer son retour en force, et profiter du soutien de son public pour engranger trois points précieux. De l’autre, le KACM, de retour parmi l’élite, rêve de créer la surprise et de signer une performance marquante face à l’un des cadors du championnat.</p>
+                        
+                        <h5 class="mt-4">📅 Date, lieu & heure</h5>
+                        <p><i class="far fa-calendar-alt me-2"></i><strong>Date :</strong> Vendredi 12 septembre 2025<br>
+                        <i class="far fa-clock me-2"></i><strong>Heure :</strong> 20h00<br>
+                        <i class="fas fa-map-marker-alt me-2"></i><strong>Lieu :</strong> Stade Mohammed V, Casablanca</p>
+                        
+                        <p>Au-delà de l’enjeu sportif, cette rencontre oppose deux clubs historiques du football marocain, chacun porté par une ferveur populaire exceptionnelle. Les Marrakchis savent qu’ils devront faire preuve de rigueur défensive et d’efficacité offensive pour contrer la puissance offensive des Wydadis.</p>
+                        
+                        <p>L’ambiance s’annonce électrique et le spectacle au rendez-vous. Reste à savoir si l’expérience du Wydad fera la différence ou si le Kawkab viendra troubler les pronostics.</p>
+                        
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="javascript:history.back()" class="back-button">
+                            <i class="fas fa-arrow-left me-2"></i>Retour aux actualités
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Fixe -->
+    <footer class="fixed-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-0">KACM.vercel.app  I  Par : M.Seddik Elidrissi</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
