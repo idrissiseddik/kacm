@@ -112,15 +112,15 @@
         }
         .thank-you-message i {
             font-size: 4rem;
-            color: #d10000; /* Changé en rouge */
+            color: #d10000;
             margin-bottom: 20px;
         }
         .thank-you-message h3 {
-            color: #d10000; /* Changé en rouge */
+            color: #d10000;
             font-weight: bold;
         }
         .thank-you-message p {
-            color: #d10000; /* Changé en rouge */
+            color: #d10000;
         }
         .whatsapp-icon {
             color: #25D366;
@@ -156,6 +156,16 @@
             font-weight: 600;
             color: #d10000;
             margin-bottom: 8px;
+        }
+        
+        /* Alerte personnalisée - FOND ROUGE, TEXTE BLANC, SANS X */
+        .alert-kawkab {
+            background-color: #d10000;
+            color: white;
+            border: 2px solid #a00000;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
         }
         
         @media (max-width: 576px) {
@@ -199,11 +209,17 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <!-- Alert for validation errors - MODIFIÉE: FOND ROUGE, TEXTE BLANC, SANS X -->
+                    <div class="alert-kawkab" role="alert" id="validationAlert" style="display: none;">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        <span id="alertMessage">Veuillez remplir <strong>tous les champs</strong> avant de soumettre votre article.</span>
+                    </div>
+                    
                     <!-- Form for article -->
                     <form id="articleForm">
                         <div class="mb-3">
                             <label for="authorName" class="form-label">Votre Nom</label>
-                            <input type="text" class="form-control" id="authorName" required placeholder="Ex: M.Seddik Elidrissi">
+                            <input type="text" class="form-control" id="authorName" required placeholder="Ex: Ahmed Bennani">
                         </div>
                         <div class="mb-3">
                             <label for="articleTitle" class="form-label">Titre de l'article</label>
@@ -235,7 +251,7 @@
     </div>
 
     <div class="footer">
-        <p>Kawkab Athletic Club de Marrakech <span class="stars"><br>★</span> <br>Depuis 1947</p>
+        <p>Kawkab Athletic Club de Marrakech <span class="stars">★</span> Depuis 1948</p>
     </div>
 
     <!-- Bootstrap & jQuery JS -->
@@ -253,7 +269,8 @@
                 
                 // Basic validation
                 if (!name || !title || !content) {
-                    alert('Veuillez remplir tous les champs!');
+                    // Show custom alert
+                    $('#validationAlert').show();
                     return;
                 }
                 
@@ -269,6 +286,7 @@
                 // Hide form and show thank you message
                 $('#articleForm').hide();
                 $('#modalFooter').hide();
+                $('#validationAlert').hide();
                 $('#thankYouMessage').show();
             });
             
@@ -276,6 +294,7 @@
             $('#articleModal').on('hidden.bs.modal', function () {
                 $('#articleForm').show();
                 $('#modalFooter').show();
+                $('#validationAlert').hide();
                 $('#thankYouMessage').hide();
                 $('#articleForm')[0].reset();
             });
