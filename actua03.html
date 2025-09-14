@@ -98,6 +98,36 @@
             text-align: center;
         }
         
+        .video-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .video-title {
+            color: #d62828;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .club-name {
@@ -156,6 +186,20 @@
 
                         <p>Cette victoire permet au WAC de bien démarrer le championnat, tandis que le KACM devra corriger ses erreurs et gérer ses absences pour les prochains matchs.</p>
                         
+                    </div>
+                    
+                    <!-- Section Vidéo -->
+                    <div class="video-container">
+                        <h3 class="video-title">Résumé vidéo du match</h3>
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/E-b449nn4KE" 
+                                title="Résumé du match WAC vs KACM" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                     
                     <div class="text-center">
