@@ -100,12 +100,9 @@
         
         /* Styles pour la section vidéo */
         .video-section {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-bottom: 30px;
-            border-top: 5px solid #d62828;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px dashed #e9ecef;
         }
         
         .video-title {
@@ -133,11 +130,19 @@
             border: none;
         }
         
-        /* Styles pour le bouton en bas de page */
-        .bottom-button-container {
+        .video-description {
             text-align: center;
-            margin-top: 20px;
-            margin-bottom: 40px;
+            margin-top: 15px;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        /* Styles pour le bouton en bas de page */
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #e9ecef;
         }
         
         /* Responsive adjustments */
@@ -150,7 +155,7 @@
                 padding-top: 90px;
             }
             
-            .article-container, .video-section {
+            .article-container {
                 padding: 20px;
             }
             
@@ -208,34 +213,26 @@ Malgré une domination claire, les Marrakchis n’ont pas réussi à égaliser.<
                         <p><strong>Cartons rouges :</strong> Hamdaoui (KACM)</p>
                         <p><strong>Constat :</strong> Deuxième victoire consécutive pour Berkane, deuxième défaite consécutive pour KACM, mais une performance encourageante pour les Marrakchis malgré l’infériorité numérique.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Section Vidéo YouTube -->
-        <div class="row">
-            <div class="col-12">
-                <div class="video-section">
-                    <h3 class="video-title">Résumé vidéo du match</h3>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/IsXlXqCZVLo" 
-                                title="Résumé du match KACM vs RSB" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
+                    
+                    <!-- Section Vidéo YouTube intégrée dans la même carte -->
+                    <div class="video-section">
+                        <h3 class="video-title">Résumé vidéo du match</h3>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/IsXlXqCZVLo" 
+                                    title="Résumé du match KACM vs RSB" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="video-description">Revivez les moments forts du match entre le KACM et la RSB grâce à ce résumé vidéo.</p>
                     </div>
-                    <p class="text-center mt-3">Revivez les moments forts du match entre le KACM et la RSB grâce à ce résumé vidéo.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Bouton Retour en bas de page -->
-        <div class="row">
-            <div class="col-12">
-                <div class="bottom-button-container">
-                    <a href="javascript:history.back()" class="back-button">
-                        <i class="fas fa-arrow-left me-2"></i>Retour aux actualités
-                    </a>
+                    
+                    <!-- Bouton Retour intégré dans la même carte -->
+                    <div class="button-container">
+                        <a href="javascript:history.back()" class="back-button">
+                            <i class="fas fa-arrow-left me-2"></i>Retour aux actualités
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
