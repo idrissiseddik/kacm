@@ -98,6 +98,48 @@
             text-align: center;
         }
         
+        /* Styles pour la section vidéo */
+        .video-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-top: 5px solid #d62828;
+        }
+        
+        .video-title {
+            color: #d62828;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Styles pour le bouton en bas de page */
+        .bottom-button-container {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .club-name {
@@ -108,11 +150,11 @@
                 padding-top: 90px;
             }
             
-            .article-container {
+            .article-container, .video-section {
                 padding: 20px;
             }
             
-            .article-title {
+            .article-title, .video-title {
                 font-size: 1.5rem;
             }
         }
@@ -142,7 +184,7 @@
                         <i class="far fa-user me-1 ms-2"></i> Par M. Seddik Elidrissi
                     </div>
                     
-                    <img src="images/actua13.jpg" alt="Match KACM RSB" class="article-image">
+                    <img src="https://via.placeholder.com/800x400/d62828/ffffff?text=Match+KACM+RSB" alt="Match KACM RSB" class="article-image">
                     
                     <div class="article-content">
                         <p>La rencontre a débuté sur un fait marquant : dès la 2eme minute, l’arbitre, alerté par la VAR, a accordé un penalty controversé à la RSB, transformé par Oussama Mellioui. Cette décision a immédiatement provoqué des réactions et installé une tension sur le terrain.</p>
@@ -166,12 +208,34 @@ Malgré une domination claire, les Marrakchis n’ont pas réussi à égaliser.<
                         <p><strong>Cartons rouges :</strong> Hamdaoui (KACM)</p>
                         <p><strong>Constat :</strong> Deuxième victoire consécutive pour Berkane, deuxième défaite consécutive pour KACM, mais une performance encourageante pour les Marrakchis malgré l’infériorité numérique.</p>
                     </div>
-                    
-                    <div class="text-center">
-                        <a href="javascript:history.back()" class="back-button">
-                            <i class="fas fa-arrow-left me-2"></i>Retour aux actualités
-                        </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section Vidéo YouTube -->
+        <div class="row">
+            <div class="col-12">
+                <div class="video-section">
+                    <h3 class="video-title">Résumé vidéo du match</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/IsXlXqCZVLo" 
+                                title="Résumé du match KACM vs RSB" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
                     </div>
+                    <p class="text-center mt-3">Revivez les moments forts du match entre le KACM et la RSB grâce à ce résumé vidéo.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bouton Retour en bas de page -->
+        <div class="row">
+            <div class="col-12">
+                <div class="bottom-button-container">
+                    <a href="javascript:history.back()" class="back-button">
+                        <i class="fas fa-arrow-left me-2"></i>Retour aux actualités
+                    </a>
                 </div>
             </div>
         </div>
