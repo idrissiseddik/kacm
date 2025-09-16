@@ -114,7 +114,7 @@
         
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Ratio 16:9 */
+            padding-bottom: 56.25%; /* Ratio 16:9 par défaut */
             height: 0;
             overflow: hidden;
             border-radius: 8px;
@@ -162,6 +162,29 @@
             .article-title, .video-title {
                 font-size: 1.5rem;
             }
+            
+            /* Augmentation de la hauteur de la vidéo pour mobile */
+            .video-container {
+                padding-bottom: 75%; /* Ratio 4:3 pour mobile (plus haut) */
+            }
+        }
+        
+        /* Ajustements supplémentaires pour très petits écrans */
+        @media (max-width: 576px) {
+            .video-container {
+                padding-bottom: 85%; /* Encore plus haut sur les très petits écrans */
+            }
+            
+            .article-content {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Pour les écrans larges, on peut garder le ratio 16:9 */
+        @media (min-width: 1200px) {
+            .video-container {
+                padding-bottom: 56.25%; /* Ratio 16:9 pour les grands écrans */
+            }
         }
     </style>
 </head>
@@ -205,13 +228,13 @@ Malgré une domination claire, les Marrakchis n’ont pas réussi à égaliser.<
                         <p>Cependant, sur une contre-attaque rapide, Youssef Mehri, ancien joueur du KACM, a inscrit le 2eme but pour Berkane, donnant l’impression que le match était scellé. Mehri a néanmoins salué les supporters marrakchis après son but, dans un geste de respect.</p>
 
                         <h5>But de la dernière minute : Soulaimane Cissé relance le suspense</h5>
-                        <p>Dans les arrêts de jeu, le nouveau venu Soulaimane Cissé a marqué pour le KACM, réduisant l’écart à 2-1 et offrant une fin de match palpitante. Ce but tardif souligne la détermination des Marrakchis malgré l’infériorité numérique et laisse un peu d’espoir pour les prochains matchs.</p>
+                        <p>Dans les arrêts de jeu, le nouveau venu Soulaimane Cissé a marqué pour le KACM, réduisant l’écart à 2-1 et offrant une fin de match palpitante. Ce but tardif souligne la détermination des Marrakchis malgré l’infériorité numérique et laisse un peu d'espoir pour les prochains matchs.</p>
 
                         <h5>Bilan</h5>
                         <p><strong>Score final :</strong> KACM 1 – 2 RSB</p>
                         <p><strong>Buteurs :</strong> Oussama Mellioui (RSB, penalty 2eme min), Youssef Mehri (RSB, contre-attaque), Soulaimane Cissé (KACM, arrêts de jeu)</p>
                         <p><strong>Cartons rouges :</strong> Hamdaoui (KACM)</p>
-                        <p><strong>Constat :</strong> Deuxième victoire consécutive pour Berkane, deuxième défaite consécutive pour KACM, mais une performance encourageante pour les Marrakchis malgré l’infériorité numérique.</p>
+                        <p><strong>Constat :</strong> Deuxième victoire consécutive pour Berkane, deuxième défaite consécutive pour KACM, mais une performance encourageante pour les Marrakchis malgré l'infériorité numérique.</p>
                     </div>
                     
                     <!-- Section Vidéo YouTube intégrée dans la même carte -->
