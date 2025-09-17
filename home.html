@@ -297,7 +297,7 @@
             overflow: hidden;
         }
         
-        /* Styles pour le carousel des sponsors */
+        /* Styles pour le carousel des sponsors - MODIFIÉ */
         .sponsor-carousel {
             height: 70px;
             width: 100%;
@@ -309,6 +309,11 @@
             display: flex;
             animation: slideHorizontal 20s linear infinite;
             width: max-content;
+        }
+        
+        /* Dupliquer les sponsors pour créer un effet de boucle parfaite */
+        .sponsor-track .sponsor-item {
+            animation: none; /* Supprimer toute animation individuelle */
         }
         
         .sponsor-item {
@@ -335,13 +340,13 @@
             color: #6c757d;
         }
         
-        /* Animation horizontale personnalisée */
+        /* Animation horizontale personnalisée - MODIFIÉE */
         @keyframes slideHorizontal {
             0% {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-50%);
+                transform: translateX(-50%); /* Déplacer de 50% seulement */
             }
         }
         
@@ -636,40 +641,59 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <!-- Carousel des sponsors avec animation personnalisée -->
+                    <!-- Carousel des sponsors avec animation personnalisée - MODIFIÉ -->
                     <div class="sponsor-carousel">
                         <div class="sponsor-track">
+                            <!-- Première série de sponsors -->
                             <div class="sponsor-item">
-                                <p class="sponsor-name">Sponsor Officiel</p>
-                                <a href="#" class="sponsor-link">ici le nom</a>
+                                <p class="sponsor-name">PICKALBATROS (HOTELS & RESORTS)</p>
+                                <a href="#" class="sponsor-link">---</a>
                             </div>
                             <div class="sponsor-item">
-                                <p class="sponsor-name">Partenaire Principal</p>
-                                <a href="#" class="sponsor-link">ici le nom</a>
+                                <p class="sponsor-name">Région Marrakech Safi</p>
+                                <a href="#" class="sponsor-link">---</a>
                             </div>
                             <div class="sponsor-item">
-                                <p class="sponsor-name">Fournisseur Officiel</p>
-                                <a href="#" class="sponsor-link">ici le nom</a>
+                                <p class="sponsor-name">VISIT MARRAKECH</p>
+                                <a href="#" class="sponsor-link">---</a>
                             </div>
                             <div class="sponsor-item">
-                                <p class="sponsor-name">Partenaire Technique</p>
-                                <a href="#" class="sponsor-link">ici le nom</a>
+                                <p class="sponsor-name">Commune de Marrakech</p>
+                                <a href="#" class="sponsor-link">---</a>
                             </div>
                             <div class="sponsor-item">
-                                <p class="sponsor-name">Sponsor Officiel</p>
-                                <a href="#" class="sponsor-link">ici le nom</a>
+                                <p class="sponsor-name">GROUPE BARID AL-MAGHRIB</p>
+                                <a href="#" class="sponsor-link">---</a>
                             </div>
                             <div class="sponsor-item">
-                                <p class="sponsor-name">Partenaire Principal</p>
-                                <a href="#" class="sponsor-link">ici le nom</a>
+                                <p class="sponsor-name">AB Sport</p>
+                                <a href="#" class="sponsor-link">---</a>
+                            </div>
+                            
+                            <!-- Duplication des sponsors pour créer l'effet infini -->
+                            <div class="sponsor-item">
+                                <p class="sponsor-name">PICKALBATROS (HOTELS & RESORTS)</p>
+                                <a href="#" class="sponsor-link">---</a>
                             </div>
                             <div class="sponsor-item">
-                                <p class="sponsor-name">Fournisseur Officiel</p>
-                                <a href="#" class="sponsor-link">ici le nom</a>
+                                <p class="sponsor-name">Région Marrakech Safi</p>
+                                <a href="#" class="sponsor-link">---</a>
                             </div>
                             <div class="sponsor-item">
-                                <p class="sponsor-name">Partenaire Technique</p>
-                                <a href="#" class="sponsor-link">ici le nom</a>
+                                <p class="sponsor-name">VISIT MARRAKECH</p>
+                                <a href="#" class="sponsor-link">---</a>
+                            </div>
+                            <div class="sponsor-item">
+                                <p class="sponsor-name">Commune de Marrakech</p>
+                                <a href="#" class="sponsor-link">---</a>
+                            </div>
+                            <div class="sponsor-item">
+                                <p class="sponsor-name">GROUPE BARID AL-MAGHRIB</p>
+                                <a href="#" class="sponsor-link">---</a>
+                            </div>
+                            <div class="sponsor-item">
+                                <p class="sponsor-name">AB Sport</p>
+                                <a href="#" class="sponsor-link">---</a>
                             </div>
                         </div>
                     </div>
@@ -684,6 +708,13 @@
     <script>
         // Données des cartes - Facile à modifier et ajouter de nouvelles
         const cardData = [
+            {
+                title: "Taoussi : « Les prémices d’une équipe compétitive… la confiance manque encore »",
+                image: "images/actua16.jpg",
+                link: "actua16.html",
+                date: "17 Septembre 2025",
+                author: "M. Seddik Elidrissi"
+            },
             {
                 title: "Ismail Mehrab, un talent prometteur qui s’est distingué malgré la défaite",
                 image: "images/actua15.jpg",
@@ -840,5 +871,4 @@
         });
     </script>
 </body>
-
 </html>
