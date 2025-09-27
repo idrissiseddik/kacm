@@ -98,6 +98,37 @@
             text-align: center;
         }
         
+        /* Style pour le lien BotolaPro */
+        .botola-link {
+            display: inline-block;
+            margin-top: 25px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .botola-banner {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .botola-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .botola-icon {
+            font-size: 1.2rem;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .club-name {
@@ -114,6 +145,11 @@
             
             .article-title {
                 font-size: 1.5rem;
+            }
+            
+            .botola-banner {
+                padding: 12px 20px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -135,7 +171,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="article-container">
-                    <h2 class="article-title">Le KACM s’incline 2-1 face à l’OD dans un match intense marqué par des débordements</h2>
+                    <h2 class="article-title">Le KACM s'incline 2-1 face à l'OD dans un match intense marqué par des débordements</h2>
                     
                     <div class="article-meta">
                         <i class="far fa-calendar-alt me-1"></i> 27 Septembre 2025 | 
@@ -145,20 +181,28 @@
                     <img src="images/actua29.jpg" alt="Victoire du KACM" class="article-image">
                     
                     <div class="article-content">
-<p>Ce samedi 27 septembre à 16h00, le Kawkab de Marrakech (KACM) affrontait l’Olympic Dcheira (OD) au Stade Adrar d’Agadir pour le compte de la 3eme journée de la Botola Pro. Les deux équipes, récemment promues en première division cette saison, se sont présentées avec la volonté de confirmer leurs ambitions. Les supporters des deux clubs avaient fait le déplacement pour encourager leurs équipes, promettant une rencontre animée et disputée.</p>
+<p>Ce samedi 27 septembre à 16h00, le Kawkab de Marrakech (KACM) affrontait l'Olympic Dcheira (OD) au Stade Adrar d'Agadir pour le compte de la 3eme journée de la Botola Pro. Les deux équipes, récemment promues en première division cette saison, se sont présentées avec la volonté de confirmer leurs ambitions. Les supporters des deux clubs avaient fait le déplacement pour encourager leurs équipes, promettant une rencontre animée et disputée.</p>
 
-<p>Le coup d’envoi a été retardé de 15 minutes en raison d’un problème technique dans le dispositif de communication de l’arbitrage. Dès les premières minutes, le KACM a montré son ambition avec des occasions franches, notamment par Janati, dont la frappe a heurté la barre à la 11eme minute. Les supporters du KACM, venus en masse à Agadir, ont contribué à créer une ambiance intense dans les tribunes.</p>
+<p>Le coup d'envoi a été retardé de 15 minutes en raison d'un problème technique dans le dispositif de communication de l'arbitrage. Dès les premières minutes, le KACM a montré son ambition avec des occasions franches, notamment par Janati, dont la frappe a heurté la barre à la 11eme minute. Les supporters du KACM, venus en masse à Agadir, ont contribué à créer une ambiance intense dans les tribunes.</p>
 
-<p>Le premier but du KACM est intervenu juste avant la pause : Hamza Janati a marqué depuis une position difficile, offrant l’avantage 1-0 et déclenchant une grande joie parmi les joueurs et les supporters. La rencontre a été marquée par plusieurs avertissements pour les deux équipes, montrant déjà la tension qui montait sur le terrain.</p>
+<p>Le premier but du KACM est intervenu juste avant la pause : Hamza Janati a marqué depuis une position difficile, offrant l'avantage 1-0 et déclenchant une grande joie parmi les joueurs et les supporters. La rencontre a été marquée par plusieurs avertissements pour les deux équipes, montrant déjà la tension qui montait sur le terrain.</p>
 
-<p>La seconde mi-temps a été très disputée. L’OD a égalisé dès la 47eme minute par son capitaine Ayoub Benaddi, avant de donner l’avantage à son équipe à la 70eme minute sur penalty. Le KACM a multiplié les occasions, mais sans réussite, tandis que les changements tactiques n’ont pas suffi à inverser la tendance. Malheureusement, la fin du match a été entachée par des débordements entre les supporters des deux équipes, un comportement honteux et inacceptable.<br> 
-La rencontre s’est terminée sur le score de 2-1 pour l’OD, infligeant au KACM sa troisième défaite consécutive.</p>
+<p>La seconde mi-temps a été très disputée. L'OD a égalisé dès la 47eme minute par son capitaine Ayoub Benaddi, avant de donner l'avantage à son équipe à la 70eme minute sur penalty. Le KACM a multiplié les occasions, mais sans réussite, tandis que les changements tactiques n'ont pas suffi à inverser la tendance. Malheureusement, la fin du match a été entachée par des débordements entre les supporters des deux équipes, un comportement honteux et inacceptable.<br> 
+La rencontre s'est terminée sur le score de 2-1 pour l'OD, infligeant au KACM sa troisième défaite consécutive.</p>
 
                     </div>
                     
                     <div class="text-center">
                         <a href="javascript:history.back()" class="back-button">
                             <i class="fas fa-arrow-left me-2"></i>Retour aux actualités
+                        </a>
+                        
+                        <!-- Lien vers BotolaPro -->
+                        <a href="https://botolapro.vercel.app" target="_blank" class="botola-link">
+                            <div class="botola-banner">
+                                <i class="fas fa-play-circle botola-icon"></i>
+                                Regarder le résumé du match sur BotolaPro
+                            </div>
                         </a>
                     </div>
                 </div>
